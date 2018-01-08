@@ -1,4 +1,5 @@
 $(document).ready( function(){
+
      $('.js-back').hide();
      console.log('Activities: ', activities);
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
@@ -107,6 +108,16 @@ function renderActivity(recipe) {
                               );
 }
 
+/**
+ * Funcion para asignar texto al parrafo
+ * Con el metodo children() obtengo el primer elemento p que se encuentre en el div
+ * Con html() le asigno el texto "nuevas recetas".
+ */
+function printNews() {
+  var hijo = $('.callout-news').children('p');
+  hijo.html('<b>NUEVAS RECETAS</b>');
+}
+printNews();
 
 
 
