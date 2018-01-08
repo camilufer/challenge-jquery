@@ -73,4 +73,42 @@ function renderActivity(recipe) {
     $('.wrapper-message').hide();
 }
 
+/**
+ * Funcion para asignar texto al parrafo
+ * Con el metodo children() obtengo el primer elemento p que se encuentre en el div
+ * Con html() le asigno el texto "nuevas recetas".
+ */
+/*
+* Función que se encarga de pintar una actividad
+* Aqui se tiene que crear el HTML que esta en el 
+* archivo "templates/templates-activity.html"
+*/
+function renderActivity(recipe) {
+  
+  var avatar = recipe.userAvatar;
+  var name = recipe.userName;
+  var title = recipe.recipeName;
+  var texto = recipe.text;
+  var place = recipe.place;
+  var image = recipe.image; 
+  $('.list-activities').append('<a href="#" class="item-activity">'+
+                                  '<span class= "attribution">'+
+                                    '<span class="avatar">'+
+                                      '<img src="'+avatar+'" class="image-avatar">'+
+                                    '</span>'+
+                                    '<span class="meta">'+
+                                      '<span class="author">'+name+'</span>'+
+                                      '<span class="recipe">'+title+'</span>: '+texto+
+                                      '<span class="location">&mdash;'+place+'</span>'+
+                                    '</span>'+
+                                  '</span >'+
+                                  '<div class="bg-image" style="background-image: url(' + image +');"></div>'+
+                                '</a >'
+                              );
+}
+
+
+
+
+  
 
