@@ -3,6 +3,7 @@ $(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
     printNews();
+    console.log('Recipes: ', recipesArray);
 });
 
 
@@ -15,7 +16,12 @@ function printNews(){
 }
 
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+  for (var i = 0; i < recipesArray.length; i++) {
+    if (recipesArray[i].highlighted) {
+      renderRecipe(recipesArray[i]);
+    }
+  }
+	
 }
 
 /*
