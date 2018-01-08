@@ -1,9 +1,11 @@
 $(document).ready( function(){
      $('.js-back').hide();
+     console.log('Activities: ', activities);
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
     printNews();
     console.log('Recipes: ', recipesArray);
+  renderActivities(activities);
 });
 
 
@@ -40,21 +42,11 @@ function renderRecipe(recipe) {
           '<span class="bookmarks-recipe">' +
           '<span class="icon-bookmark"></span>' +
           '</span>'+
-           '</span>'+
-            '</span>'+
-            '<img src="assets/img/recipes/640x480/'+ recipe.name +'.jpg" /></a>');
-
+          '</span>'+
+          '</span>'+
+          '<img src="assets/img/recipes/640x480/'+ recipe.name +'.jpg" /></a>');
 
 }
-
-
- 
-    
-      
-      
-      
-
-  
 
 
 
@@ -62,7 +54,10 @@ function renderRecipe(recipe) {
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+	
+  for (var i = 0; i < activities.length; i++) {
+      renderActivity(activities[i]);
+    } 
 }
 
 /*
@@ -71,7 +66,11 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
-	
+	console.log('Activities: ', activities);
+  /* El if es innecesario ya que al activarse esta funcion indica que recipe ya tiene mas de un elemento.
+   * if (activities.lengh > 0);
+  */
+    $('.wrapper-message').hide();
 }
 
 
