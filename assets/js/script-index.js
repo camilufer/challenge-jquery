@@ -2,7 +2,7 @@ $(document).ready( function(){
      $('.js-back').hide();
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
-
+    printNews();
 });
 
 
@@ -10,6 +10,10 @@ $(document).ready( function(){
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
+function printNews(){
+	$('.callout-news').find('p').text('Nuevas recetas');
+}
+
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
 }
